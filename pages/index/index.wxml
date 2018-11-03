@@ -1,0 +1,127 @@
+<!--index.wxml-->
+<view class="index">
+  <!-- 搜索框 -->
+  <view class="page__bd">
+    <view class="weui-search-bar">
+        <view class="weui-search-bar__form">
+            <view class="weui-search-bar__box">
+                <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                    <icon type="clear" size="14"></icon>
+                </view>
+            </view>
+            <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                <icon class="weui-icon-search" type="search" size="14"></icon>
+                <view class="weui-search-bar__text">搜索</view>
+            </label>
+        </view>
+        <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+    <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+        <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">
+                <view>实时搜索文本</view>
+            </view>
+        </navigator>
+        <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">
+                <view>实时搜索文本</view>
+            </view>
+        </navigator>
+        <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">
+                <view>实时搜索文本</view>
+            </view>
+        </navigator>
+        <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">
+                <view>实时搜索文本</view>
+            </view>
+        </navigator>
+    </view>
+  </view>
+  <view>
+    <!-- 轮播图 -->
+    <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:key="key">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="100%" height="100%"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 分类导航 -->
+  <view class='navList'>
+    <view class='item'>玩具</view>
+    <view class='item'>家具</view>
+    <view class='item'>奶粉</view>
+    <view class='item'>童装</view>
+    <view class='item'>用品</view>
+  </view>
+  <view class='shop-area'>
+    <view class='title'>
+      <view class='line'></view>
+      <view class='name'>奶粉区</view>
+      <view class='line'></view>
+    </view>
+    <view class='shop-list'>
+      <view class='shop-item'>
+        <view class='left'>
+          <image src='http://t00img.yangkeduo.com/goods/images/2018-10-24/b13350818fb1fce4d82b814fcefed998.jpeg?imageMogr2/strip%7CimageView2/2/w/300/q/80'></image>
+        </view>
+        <view class='content'>
+          <view class='title'>澳洲美资莱</view>
+          <view class='from'>来自于澳洲草原的奶粉</view>
+          <view class='bottom'>
+            <text class='buy-count'>销量：200</text>
+            <text class='num'>库存：100</text>
+          </view>
+        </view>
+        <view class='right'>
+          <view class='nowPrice'>￥120</view>
+          <view class='prePrice'>原价：200</view>
+          <button class="weui-btn" type="primary" plain="true">抢购</button>
+        </view>
+      </view>
+      <view class='shop-item'>
+        <view class='left'>
+          <image src='http://t00img.yangkeduo.com/goods/images/2018-10-24/b13350818fb1fce4d82b814fcefed998.jpeg?imageMogr2/strip%7CimageView2/2/w/300/q/80'></image>
+        </view>
+        <view class='content'>
+          <view class='title'>澳洲美资莱</view>
+          <view class='from'>来自于澳洲草原的奶粉</view>
+          <view class='bottom'>
+            <text class='buy-count'>销量：200</text>
+            <text class='num'>库存：100</text>
+          </view>
+        </view>
+        <view class='right'>
+          <view class='nowPrice'>￥120</view>
+          <view class='prePrice'>原价：200</view>
+          <button class="weui-btn" type="primary" plain="true">抢购</button>
+        </view>
+      </view>
+      <view class='shop-item'>
+        <view class='left'>
+          <image src='http://t00img.yangkeduo.com/goods/images/2018-10-24/b13350818fb1fce4d82b814fcefed998.jpeg?imageMogr2/strip%7CimageView2/2/w/300/q/80'></image>
+        </view>
+        <view class='content'>
+          <view class='title'>澳洲美资莱</view>
+          <view class='from'>来自于澳洲草原的奶粉</view>
+          <view class='bottom'>
+            <text class='buy-count'>销量：200</text>
+            <text class='num'>库存：100</text>
+          </view>
+        </view>
+        <view class='right'>
+          <view class='nowPrice'>￥120</view>
+          <view class='prePrice'>原价：200</view>
+          <button class="weui-btn" type="primary" plain="true">抢购</button>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+</view>

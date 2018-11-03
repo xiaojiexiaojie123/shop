@@ -1,0 +1,146 @@
+/* pages/shopDetail/shopDetail.wxss */
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-tab__content{
+    padding-top: 60px;
+    text-align: center;
+}
+.shopContent{
+  width: 100%
+}
+.shopContent .top {
+  position: relative;
+  height: 64px;
+  padding-left: 10px;
+  overflow: hidden;
+}
+.shopContent .top .title{
+  padding-right: 50px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.shopContent .top .collect{
+  width: 50px;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.shopContent .bottom{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.shopContent .bottom .price .nowPrice{
+  color: red;
+  font-weight: 700;
+  font-size: 18px;
+  margin-right: 4px;
+}
+.shopContent .bottom .price .prePrice{
+  color: #ccc;
+  font-size: 12px;
+}
+.shopContent .promise{
+  background: rgb(242, 242, 242);
+  color: #ccc;
+  padding: 10px 10px;
+}
+.shopContent .buy{
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shopContent .buy .numChange{
+  display: flex;
+  justify-content: center;
+}
+.shopContent .buy .numChange input {
+  width: 30px;
+  text-align: center;
+}
+.shopContent .buy .numChange .btn {
+  padding: 0;
+  margin: 0;
+  line-height: 1em;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.shopContent .buy .operation{
+  display: flex;
+  /* justify-content:  */
+}
+.shopContent .buy .operation button {
+  padding: 6px 12px;
+  margin: 0;
+  line-height: 1em;
+  font-size: 12px;
+}
+.shopContent .buy .operation button:nth-child(1){
+  margin-right: 6px;
+}
+.weui-tab__content {
+  padding: 0;
+}
+.page__bd .type{
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #ccc;
+}
+.page__bd .type view{
+  flex: 1;
+  height: 100%;
+  padding: 10px 0;
+}
+.page__bd .type .typeActive{
+  border-bottom: 1px solid blue;
+}
+.page__bd .type .num{
+  color: #ccc;
+}
+.page__bd .userEvaluate{
+  padding: 0 10px;
+  border-bottom: 1px solid #ccc;
+}
+.page__bd .userEvaluate .user{
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+.page__bd .userEvaluate .user image{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+.page__bd .userEvaluate .desc{
+  display: flex;
+  color: #ccc;
+  font-size: 12px;
+  padding: 8px 0;
+}
+.page__bd .userEvaluate .desc view:nth-child(1){
+  margin-right: 8px;
+}
+.page__bd .userEvaluate .words{
+  text-align: left;
+}
+.page__bd .userEvaluate .imgs{
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 0;
+}
+.page__bd .userEvaluate .imgs image{
+  width: 100%;
+  /* height: 50px; */
+  padding: 0 5px;
+}
+.weui-navbar__slider{
+  width: 50%;
+}

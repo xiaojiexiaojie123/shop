@@ -1,0 +1,95 @@
+/* pages/shopCart/shopCart.wxss */
+.shopCart{
+  position: relative;
+  width: 100%;
+}
+.total {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(229, 229, 229);
+  z-index: 99;
+}
+.cart-list{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-bottom: 46px;
+}
+.total .totalPrice {
+  font-weight: 700;
+}
+.total .totalPrice .num {
+  color: red
+}
+.total .weui-btn{
+  margin: 0;
+  margin-right: 8px;
+}
+.cart-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 4px 8px;
+}
+.cart-item .select{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 8px;
+}
+.cart-item .content{
+  display: flex;
+}
+.cart-item .content .img{
+  flex: 3;
+  /* flex-grow: 1; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-item .content .img image{
+  width: 80%;
+  height: 80%;
+}
+.cart-item .content .right{
+  flex: 7;
+  padding-right: 20px;
+}
+.cart-item .content .right .title{
+  height: 48px;
+  font-size: 16px;
+  word-break:break-all;
+  overflow: hidden;
+}
+.cart-item .content .right .selectAge{
+  margin: 10px 0;
+}
+.cart-item .content .right .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart-item .content .right .bottom .price{
+  color: red;
+  font-weight: 700;
+  padding: 4px 0;
+}
+.cart-item .content .right .bottom .numChange{
+  display: flex;
+  justify-content: center;
+}
+.cart-item .content .right .bottom .numChange input {
+  width: 30px;
+  text-align: center;
+}
+.cart-item .content .right .bottom .numChange .btn {
+  padding: 0;
+  margin: 0;
+  line-height: 1em;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}

@@ -1,0 +1,94 @@
+<!--pages/shopDetail/shopDetail.wxml-->
+<view class='detail'>
+  <view>
+    <!-- 轮播图 -->
+    <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:key="key">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" width="355" height="150"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='shopContent'>
+    <view class='top'>
+      <view class='title'>伊利高蛋白正品保障 日期新鲜</view>
+      <view class='collect'>收藏</view>
+    </view>
+    <view class='bottom'>
+      <view class='price'>
+        <text class='nowPrice'>￥60</text>
+        <text class='prePrice'>原:￥60</text>
+      </view>
+      <view class='sellCount'>已售：50</view>
+      <view class='sellCount'>库存：200</view>
+    </view>
+    <view class='promise'>七天包退，质量保证</view>
+    <view class='buy'>
+      <view class='numChange'>
+        <button class='btn' bindtap='decrease' data-index='{{index}}'>-</button>
+        <input type='text' value="{{count}}"></input>
+        <button class='btn' bindtap='increase' data-index='{{index}}'>+</button>
+      </view>
+      <view class='operation'>
+        <button>加入购物车</button>
+        <button>立即购买</button>
+      </view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view>
+            <view class="weui-tab__panel">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">选项一的内容</view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                  <view class='type'>
+                    <view wx:for="{{types}}" wx:key="index" bindtap='changeType' data-index='{{index}}' class="{{typeIndex === index ? 'typeActive' : ''}}">
+                      {{item.title}}<text class='num'>({{item.num}})</text>
+                    </view>
+                  </view>
+                  <view class='userEvaluate'>
+                    <view class='user'>
+                      <image src='http://t00img.yangkeduo.com/goods/images/2018-10-12/4c04c4cd465e4e5314e5ad6903741751.jpeg?imageMogr2/sharpen/1%7CimageView2/2/w/1300/q/70/format/webp'></image>
+                      黄晓杰
+                    </view>
+                    <view class='desc'>
+                      <view>2018.9.17</view>
+                      <view>伊利蛋白奶粉，限时促销</view>
+                    </view>
+                    <view class='words'>包装高档，口感柔和，非常开心的购物体验</view>
+                    <view class='imgs'>
+                      <image src='http://t00img.yangkeduo.com/goods/images/2018-10-12/4c04c4cd465e4e5314e5ad6903741751.jpeg?imageMogr2/sharpen/1%7CimageView2/2/w/1300/q/70/format/webp'></image>
+                      <image src='http://t00img.yangkeduo.com/goods/images/2018-10-12/4c04c4cd465e4e5314e5ad6903741751.jpeg?imageMogr2/sharpen/1%7CimageView2/2/w/1300/q/70/format/webp'></image>
+                      <image src='http://t00img.yangkeduo.com/goods/images/2018-10-12/4c04c4cd465e4e5314e5ad6903741751.jpeg?imageMogr2/sharpen/1%7CimageView2/2/w/1300/q/70/format/webp'></image>
+                    </view>
+                  </view>
+                  <view class='userEvaluate'>
+                    <view class='user'>
+                      <image src='http://t00img.yangkeduo.com/goods/images/2018-10-12/4c04c4cd465e4e5314e5ad6903741751.jpeg?imageMogr2/sharpen/1%7CimageView2/2/w/1300/q/70/format/webp'></image>
+                      黄晓杰
+                    </view>
+                    <view class='desc'>
+                      <view>2018.9.17</view>
+                      <view>伊利蛋白奶粉，限时促销</view>
+                    </view>
+                    <view class='words'>包装高档，口感柔和，非常开心的购物体验</view>
+                    <view class='imgs'>
+                      <image src='http://t00img.yangkeduo.com/goods/images/2018-10-12/4c04c4cd465e4e5314e5ad6903741751.jpeg?imageMogr2/sharpen/1%7CimageView2/2/w/1300/q/70/format/webp'></image>
+                      <image src='http://t00img.yangkeduo.com/goods/images/2018-10-12/4c04c4cd465e4e5314e5ad6903741751.jpeg?imageMogr2/sharpen/1%7CimageView2/2/w/1300/q/70/format/webp'></image>
+                      <image src='http://t00img.yangkeduo.com/goods/images/2018-10-12/4c04c4cd465e4e5314e5ad6903741751.jpeg?imageMogr2/sharpen/1%7CimageView2/2/w/1300/q/70/format/webp'></image>
+                    </view>
+                  </view>
+                </view>
+            </view>
+        </view>
+    </view>
+  </view>
+</view>

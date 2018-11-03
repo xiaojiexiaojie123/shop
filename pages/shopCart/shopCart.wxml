@@ -1,0 +1,56 @@
+<!--pages/shopCart/shopCart.wxml-->
+<view class='shopCart'>
+
+  <!-- 总计 -->
+  <view class='total'>
+   <checkbox-group bindchange="selectAll">
+    <label class="weui-cell weui-check__label">
+      <checkbox class="weui-check" checked="{{selectAll}}"/>
+      <view class="weui-cell__hd weui-check__hd_in-checkbox">
+        <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!selectAll}}"></icon>
+        <icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{selectAll}}"></icon>
+      </view>
+      <view class="weui-cell__bd">全选</view>
+    </label>
+   </checkbox-group>
+   <text class='totalPrice'>总计：<text class='num'>￥{{totalPrice}}</text></text>
+   <button class="weui-btn mini-btn" type="primary" size="mini">结算</button>
+  </view>
+
+  <!-- 购物车列表 -->
+  <view class='cart-list'>
+    <view class='cart-item' wx:for="{{shopCartList}}" wx:key="index">
+      <view class='select'>
+        <checkbox-group bindchange="itemSelect" data-index="{{index}}">
+          <label class="weui-cell weui-check__label">
+            <checkbox class="weui-check" checked="{{item.selected}}" value="{{item.id}}"/>
+            <view class="weui-cell__hd weui-check__hd_in-checkbox">
+              <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.selected}}"></icon>
+              <icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{item.selected}}"></icon>
+            </view>
+          </label>
+        </checkbox-group>
+        <icon type="cancel" size="23" bindtap='deleteItem' data-index="{{index}}"></icon>
+      </view>
+      <view class='content'>
+        <view class='img'>
+          <image src='{{item.img}}'></image>
+        </view>
+        <view class='right'>
+          <view class='title'>{{item.title}}</view>
+          <picker class='selectAge' bindchange="selectType" data-index='{{index}}' value="{{ageIndex}}" range="{{ageGroup}}">
+            <button type="default" size='mini'>{{item.type}}</button>
+          </picker>
+          <view class='bottom'>
+            <view class='price'>￥{{item.price * item.count}}</view>
+            <view class='numChange'>
+              <button class='btn' bindtap='decrease' data-index='{{index}}'>-</button>
+              <input type='text' value="{{item.count}}"></input>
+              <button class='btn' bindtap='increase' data-index='{{index}}'>+</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,28 @@
+<!--pages/me/me.wxml-->
+<view class='me'>
+  <view class='info'>
+    <view class='collect'>
+      <view class='num'>12</view>
+      <view class='name'>收藏夹</view>
+    </view>
+    <view class='user'>
+      <image src='http://t00img.yangkeduo.com/goods/images/2018-10-24/b13350818fb1fce4d82b814fcefed998.jpeg?imageMogr2/strip%7CimageView2/2/w/300/q/80'></image>
+      <view class='username'>小枫同学</view>
+    </view>
+    <view class='buy'>
+      <view class='num'>34</view>
+      <view class='name'>已买</view>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='item'>我的地址管理</view>
+    <view class='item'>问题反馈</view>
+    <view class='item'>关于我们</view>
+    <view class='item'>加入我们</view>
+  </view>
+  <view class='order' bindtap='orderItemShow'>订单</view>
+  <view class='payment' wx:if="{{orderItemShow}}">待付款</view>
+  <view class='deliver' wx:if="{{orderItemShow}}">待发货</view>
+  <view class='take' wx:if="{{orderItemShow}}">待收货</view>
+  <view class='evaluate' wx:if="{{orderItemShow}}">待评价</view>
+</view>
